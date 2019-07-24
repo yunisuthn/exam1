@@ -10,38 +10,34 @@ import Image1 from './plat1.jpg';
 // import logo from './exam.png'; 
 class Home extends Component {
     introduction= () =>{
-        document.getElementById("error").innerHTML = " Nous sommes " 
+        window.location = '/introduction'
+    }
+    
+    Objectif= () =>{
+        window.location = '/introduction'
+    }
+    
+    Atelier= () =>{
+        window.location = '/atelier'
     }
     
     render() {
         return (
-            <div class="container">
-                <div class="col-md-2"> 
-                     <img className = 'img imgT' src={Image1} alt="Logo" />
-                    {/* <img className = 'img imgT' src={Image2} alt="Logo" />
-                    <img className = 'img imgT' src={Image3} alt="Logo" /> */}
-                </div>
-
-                <div class="col-md-3">
-                <ul>
+            <div class=" home col-md-6 ">
+                <ul  class="col-md-2 ">
                     <li className='li li1' 
                           onClick={this.introduction}> 
                     Introduction
                     </li>
-                    <li className='li li2'>
+                    <li className='li li2 ' 
+                          onClick={this.Objectif}>
                         Objectif
                     </li>
-                    <li className='li li3'>
-                        Les ateliers
+                    <li className='li li3' 
+                          onClick={this.Atelier}>
+                        Ateliers
                     </li>
                 </ul>
-                </div>
-                <div class="error">
-                
-                </div>
-                <div class="col-md-3 visite">
-                    Visitez nos ateliers
-                </div>
             </div>
         );
     }

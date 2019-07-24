@@ -25,8 +25,14 @@ mongoose.connect('mongodb://localhost/exam').then(() => {
     console.log(e);
 });
 
+/* mongoose.connect('mongodb+srv://ony:sayna123456@cluster0-lwzb3.mongodb.net/test?retryWrites=true&w=majority').then(() => {
+    console.log('Connected to mongoDB')
+}).catch(e => {
+    console.log('Error while DB connecting');
+    console.log(e);
+}); */
 
-//Body Parser
+//Body Parser     mongodb+srv://ony:<password>@cluster0-lwzb3.mongodb.net/test?retryWrites=true&w=majority
 var urlencodedParser = bodyParser.urlencoded({
     extended: true
 });
