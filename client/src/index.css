@@ -1,0 +1,157 @@
+.MDBNavLink{
+  font-size: 20px;
+  
+}
+
+/*#sary{
+  height: 400px;
+  width : 300px;
+}*/
+/* #carte{
+  height: 150%;
+  width: 200%;
+  margin-left: 20%;
+} */
+#carte{
+  height: 300px;
+  width: 300px;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 20%;
+}
+
+.app{
+  width: 100%;  
+  height: 100%;
+}
+
+.app1{
+  width: 50%;  
+  height: 50%;
+}
+.table{
+  margin-left: 10%;
+}
+.center{
+  text-align: center;
+  margin-top: 3%;
+}
+
+.margin{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.robot {
+  font-family: 'Roboto', sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  color: #f3671f;
+}
+
+p, th { 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  font-size: 150%;
+}
+.couleur{
+ 
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.para{
+  width: 50%;
+  height: 50%;
+  margin-left: 20%;
+}
+
+.nav{
+  background: #d05c62 ;
+}
+.page-footer{
+  background: #d05c62 !important;
+
+}
+.boutton{
+  border-radius: 8px !important; 
+}
+.bienvenu{
+  text-align: center;
+}
+.login{
+  margin-top: 10%;
+}
+
+#error{
+  color: red;
+}
+.insc{
+    text-align: center;
+}
+.inscri{
+  margin-left: 20%;
+}
+.inscrit{
+  margin-left: 20%;
+}
+
+.nav1{
+  width: 100%;
+  height: 25%;
+  background: #d05c62;
+  margin-left: 130%;
+}
+
+.logo{
+  width: 20%;
+  height: 20%;
+}
+
+.cuisine{
+  margin: 1% 5% 0 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 800%;
+  font-weight: bold;
+  color: #ffff;
+  margin-right: 1%;
+}
+
+.format{
+  margin-top: 10%;
+  margin-left: 2%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 100%;
+  font-weight: bold;
+  color: #ffff;
+}
+.img{
+  width: 30%;
+  height: 30%;;
+}
+
+.div{
+
+  background-color: #f3671f;
+}
+
+.imgT{
+  width: 200px;
+  height: 320px;
+  background: #9a4;
+  -webkit-border-radius: 100px / 160px;
+  -moz-border-radius:    100px / 160px; 
+  border-radius:         100px / 160px; 
+}
+
+li{
+  margin-top: 20%;
+  font-size: 300%;
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+.visite{
+  color: #ffff;
+  font-size: 120%;
+  margin-top: 25%;
+  margin-left: 20%;
+  font-weight: bold;
+}
