@@ -4,8 +4,6 @@ import React, { Component } from 'react';
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBRow, MDBCol } from 'mdbreact';
 
 import axios from 'axios';
-import Bienvenu from './Bienvenu';
-import logo from './exam.png'; 
 class Accueil extends Component {
 
     constructor(props) {
@@ -39,9 +37,10 @@ class Accueil extends Component {
             (this.state.profil.length > 0) ? (this.state.profil.map((obj) => {
 
                 return (
-                    <MDBCol  className='row col-md-4' >
+                    // <MDBRow  className='row' >
+                        <div className='col-md-3'>
                         <MDBCard  id='carte' key={obj._id} onClick={()=>this.inscrire(obj._id)}>
-                            <MDBCardImage id='sary'cascade className="img-fluid" src={'http://localhost:8081/photos/' + obj.photo_profil} alt="pdp" />
+                            <MDBCardImage id=''cascade className=" img-fluid" src={'http://localhost:8081/photos/' + obj.photo_profil} alt="pdp" />
                             <MDBCardBody cascade>
                                 <MDBCardTitle>{obj.titre}</MDBCardTitle>
                                 <MDBCardText>{obj.description}</MDBCardText>
@@ -53,7 +52,9 @@ class Accueil extends Component {
                             </MDBCardBody>
                             {/*console.log(obj)*/}
                         </MDBCard>
-                    </MDBCol>)
+                        </div>
+                    // </MDBRow>
+                    )
 
             })) : ('')
         }
@@ -63,15 +64,32 @@ class Accueil extends Component {
         return (
                 <div  class="container">
                     <div className='row margin' >
-                        <div className='col-md-4'>
-                            <img src={logo} alt="Logo" />
+        {
+            (this.state.profil.length > 0) ? (this.state.profil.map((obj) => {
+
+                return (
+                    // <MDBRow  className='row' >
+                        <div className='col-md-3'>
+                        <MDBCard  id='carte' key={obj._id} onClick={()=>this.inscrire(obj._id)}>
+                            <MDBCardImage id=''cascade className=" img-fluid" src={'http://localhost:8081/photos/' + obj.photo_profil} alt="pdp" />
+                            <MDBCardBody cascade>
+                                <MDBCardTitle>{obj.titre}</MDBCardTitle>
+                                <MDBCardText>{obj.description}</MDBCardText>
+                                <MDBCardText>{obj.date}</MDBCardText>
+                                <MDBCardText>{obj.debut}</MDBCardText>
+                                <MDBBtn  >
+                                    S'inscrire
+                                </MDBBtn>
+                            </MDBCardBody>
+                            {/*console.log(obj)*/}
+                        </MDBCard>
                         </div>
-                        <div className='col-md-8'>
-                            <Bienvenu/>
-                        </div>
-                    </div>
-                    <div>
-                {this.carte()}
+                    // </MDBRow>
+                    )
+
+            })) : ('')
+        }
+                        {/* {this.carte()} */}
                     </div>
             </div>
         );

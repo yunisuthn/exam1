@@ -189,6 +189,7 @@ exports.createPart = (req, res) => {
                         Particulier.find()
                             .then(data => {
                                 res.send(data);
+                                
                             })
                     }).catch(err => {
                         res.status(200).send({
@@ -382,34 +383,44 @@ exports.lireImage = (req, res) => {
     }
 }
 
-/* exports.auto = (req, res) => {
+exports.auto = (req, res) => {
 
     // Find note and update it with the request body
-    Atelier.findByIdAndUpdate(req.params.noteId, {
-        titre: req.body.article || "Untitled Note",
-        description: req.body.description,
-        date: req.body.date,
-        debut: req.body.debut,
-        duree: req.body.duree,
-        placedispo: req.body.placedispo,
-        placeres: req.body.placeres,
-        prix: req.body.prix
-    }, { new: true })
-        .then(note => {
-            if (!note) {
-                return res.status(404).send({
-                    message: "Note not found with id " + req.params.noteId
-                });
+   
+    Atelier.find()
+        .then(notes => {
+            
+            for (let i = 0; i < notes.length; i++) {
+                if (req.params.noteId == notes[i]._id) {
+                    notes[i].placeres = notes[i].placeres + 1;
+                    //res.send(notes);
+
+                    Atelier.findByIdAndUpdate(req.params.noteId, {
+                        placeres: notes[i].placeres
+                    }, { new: true })
+                        .then(note => {
+                            if (!note) {
+                                return res.status(404).send({
+                                    message: "Note not found with id " + req.params.noteId
+                                });
+                            }
+                            res.send(note);
+                        }).catch(err => {
+                            if (err.kind === 'ObjectId') {
+                                return res.status(404).send({
+                                    message: "Note not found with id " + req.params.noteId
+                                });
+                            }
+                            return res.status(500).send({
+                                message: "Error updating note with id " + req.params.noteId
+                            });
+                        });
+                }
+                
             }
-            res.send(note);
         }).catch(err => {
-            if (err.kind === 'ObjectId') {
-                return res.status(404).send({
-                    message: "Note not found with id " + req.params.noteId
-                });
-            }
-            return res.status(500).send({
-                message: "Error updating note with id " + req.params.noteId
+            res.status(500).send({
+                message: err.message || 'some error'
             });
         });
-} */
+} 
