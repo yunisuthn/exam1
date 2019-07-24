@@ -6,7 +6,7 @@ const UserSchema = mongoose.Schema({
     user: {type:Number, required:true},
     titre: { type: String, required: true},
     description: { type: String, required: true },
-    date: { type: Number, required: true},
+    date: { type: Date, required: true},
 
     debut: { type: Number, required: true},
     duree: { type: Number, required: true },

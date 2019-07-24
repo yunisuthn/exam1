@@ -10,7 +10,7 @@ module.exports = function (app) {
 
     .post('/article', account.createArt)
     .get('/article', account.findArt)
-    //.post('/autoIncr/:noteId', account.auto)
+    .post('/autoIncr/:noteId', account.auto)
     .get('/article/:profilId', account.findOneArt)
     .post('/article/:noteId', account.update)
     // .delete('/article/:noteId', account.delete)

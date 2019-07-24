@@ -82,99 +82,106 @@ class PostFrontToBack extends React.Component {
 
   render() {
     return (
-      <div className="Login">
+      <div className="container">
 
-          <MDBContainer>
-              <MDBRow>
-                  <MDBCol md="6">
+<div className="col-md-6 ">
+                    veuillez entrer vos données
+                </div>
+          <MDBContainer  className="col-md-6 margin">
 
-                      <FormGroup controlId="titre" bsSize="large">
-                          <FormLabel className='couleur'>Titre:</FormLabel>
-                          <FormControl autoFocus type="text"
+                      <FormGroup className='row' controlId="titre" bsSize="large">
+                          <FormLabel className='couleur col-md-4'>Titre:</FormLabel>
+                          <FormControl autoFocus  className=' col-md-4' type="text"
                             value={this.state.value}
                             onChange={this.onChange}
                             name="titre"/>
                       </FormGroup>
-                      <FormGroup controlId="description" bsSize="large">
-                          <FormLabel className='couleur'>Description:</FormLabel>
-                          <FormControl type="textarea"
+                      <FormGroup className='row' controlId="description" bsSize="large">
+                          <FormLabel className='couleur col-md-4'>Description:</FormLabel>
+                          <FormControl type="textarea" className=' col-md-4'  rows="5"
                             value={this.state.value}
                             onChange={this.onChange}
                             name="description" />
                       </FormGroup>
-                      <FormGroup controlId="date" bsSize="large">
-                          <FormLabel className='couleur'>Date:</FormLabel>
-                          <FormControl type="text"
+                      <FormGroup className='row' controlId="date" bsSize="large">
+                          <FormLabel className='couleur col-md-4'>Date:</FormLabel>
+                          <FormControl type="date"
+                            className=' col-md-4' 
                             value={this.state.value}
                             onChange={this.onChange}
                             name="date" />
                       </FormGroup>
 
-                      <FormGroup controlId="debut" bsSize="large">
-                          <FormLabel className='couleur'>Horaire début:</FormLabel>
-                          <FormControl type="text"
+                      <FormGroup className='row' controlId="debut" bsSize="large">
+                          <FormLabel className='couleur col-md-4'>Horaire début:</FormLabel>
+                          <FormControl type="heure"
+                            className=' col-md-4' 
                             value={this.state.value}
                             onChange={this.onChange}
                             name="debut" />
                       </FormGroup>
-                      <FormGroup controlId="duree" bsSize="large">
-                          <FormLabel className='couleur'>Durée:</FormLabel>
+                      <FormGroup className='row' controlId="duree" bsSize="large">
+                          <FormLabel className='couleur col-md-4'>Durée:</FormLabel>
                           <FormControl type="text"
+                            className=' col-md-4' 
                             value={this.state.value}
                             onChange={this.onChange}
                             name="duree" />
                       </FormGroup>
-                      <FormGroup controlId="placedispo" bsSize="large">
-                          <FormLabel className='couleur'>Nombre place disponible:</FormLabel>
+                      <FormGroup className='row' controlId="placedispo" bsSize="large">
+                          <FormLabel className='couleur col-md-4'>Nombre place disponible:</FormLabel>
                           <FormControl type="text"
+                            className=' col-md-4' 
                             value={this.state.value}
                             onChange={this.onChange}
                             name="placedispo" />
                       </FormGroup>
-                      <FormGroup controlId="placeres" bsSize="large">
-                          <FormLabel className='couleur'>Nbre place reservé:</FormLabel>
+                      <FormGroup className='row' controlId="placeres" bsSize="large">
+                          <FormLabel className='couleur col-md-4'>Nbre place reservé:</FormLabel>
                           <FormControl type="text"
+                            className=' col-md-4' 
                             value={this.state.value}
                             onChange={this.onChange}
                             name="placeres" />
                       </FormGroup>
-                      <FormGroup controlId="prix" bsSize="large">
-                          <FormLabel className='couleur'>Prix:</FormLabel>
+                      <FormGroup className='row' controlId="prix" bsSize="large">
+                          <FormLabel className='couleur col-md-4'>Prix:</FormLabel>
                           <FormControl type="text"
+                            className=' col-md-4' 
                             value={this.state.value}
                             onChange={this.onChange}
                             name="prix" />
                       </FormGroup>
 
-                      <FormGroup controlId="file" bsSize="large">
+                      <FormGroup  controlId="file" bsSize="large">
                           <FormControl 
                           ref={(ref) => { this.uploadInput = ref; }} 
                           type="file"
                            name="photo_profil" />
                       </FormGroup>
 
-                      <Button variant="primary" className='couleur'
+
+                      <FormGroup  bsSize="large">
+                      <Button variant="primary" className='couleur boutton'
                           onClick={this.handleUploadImage}
                           type="submit">
                            Ajouter
                       </Button>
+                        <Button className='couleur boutton'
+                            onClick={this.disconnect}
+                            type="submit"
+                        >
+                            Deconnecter
+                        </Button>
+                        <Button className='couleur boutton'
+                            onClick={this.liste}
+                            type="submit"
+                        >
+                            Mes produits
+                        </Button>
+                      </FormGroup>
 
-                      <Button className='couleur'
-                          onClick={this.disconnect}
-                          type="submit"
-                      >
-                          Deconnecter
-                      </Button>
-                      <Button className='couleur'
-                          onClick={this.liste}
-                          type="submit"
-                      >
-                          Mes produits
-                      </Button>
 
-
-                  </MDBCol>
-              </MDBRow>
           </MDBContainer>
       {/* <form onSubmit={this.handleUploadImage}>
         <label>Nom:</label>
