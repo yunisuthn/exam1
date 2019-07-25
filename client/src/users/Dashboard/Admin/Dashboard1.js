@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom'
 import Routes from './Routes';
 import TopNavigation from './TopNavigation';
 import SideNavigation from './SlideNavigation';
-import Footer from './Footer';
+import Footer from '../../../tenaComponent/Footer';
 
 import logo from "./exam.png";
 import { MDBListGroup, MDBListGroupItem, MDBIcon } from 'mdbreact';

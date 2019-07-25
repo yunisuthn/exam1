@@ -23,11 +23,14 @@ import Inscrire from './tenaComponent/Inscrire';
 //import AfficheProfil from './users/Dashboard/AfficheProfil'
 
 
-import Dashboard from './users/Dashboard/Admin/Dashboard1'
+import Dashboard from './users/Dashboard/Admin/Dashboard1' 
 import AjoutA from './users/Dashboard/Admin/postWithUpload_frontToBack';
 import ListeA from './users/Dashboard/Admin/AfficheProfil';
 
 import Edit from './users/Dashboard/Admin/Edit'; 
+
+
+
 class App extends React.Component {
   
   render() {
@@ -39,9 +42,9 @@ class App extends React.Component {
             <Switch className='margin'>
               <Route exact path='/' component={Acceuil1} />
               {/* <PrivateRoute path="/dashboard" component={PostFrontToBack} /> */}
-              <PrivateRoute path="/dashboard" component={Dashboard} />
+              <PrivateRoute path="/admin" component={Dashboard} />
 
-              <Route path='/login' component={Login} />
+              <Route path='/connect' component={Login} />
               <PrivateRoute path='/ajout' component={AjoutA} />
               <PrivateRoute path='/liste' component={ListeA} />
 
@@ -61,6 +64,8 @@ class App extends React.Component {
               <PrivateRoute path="/userArticle" component={AfficheProfil} />
               <PrivateRoute path="/edit/:id" component={Edit} />
               {/* <PrivateRoute path='/dashboard' component={Dashboard} /> */}
+
+
             </Switch>
           </div>
         </Router>

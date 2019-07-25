@@ -7,7 +7,7 @@ import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 
 import TopNavigation from './TopNavigation';
 import SideNavigation from './SlideNavigation';
-import Footer from './Footer';
+import Footer from '../../../tenaComponent/Footer';
 export default class AfficheProfil extends Component {
 
     constructor(props) {
@@ -91,7 +91,7 @@ export default class AfficheProfil extends Component {
             <div className="">
               <SideNavigation /> 
               <TopNavigation />
-              <main id="content" className="p-5">
+              <main id="" className="p-5">
                 <div className='app1'>
                     {this.liste()}
 

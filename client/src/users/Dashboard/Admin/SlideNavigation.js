@@ -15,7 +15,7 @@ class SlideNavigation extends Component {
                 <img alt="MDB React Logo" className="img-fluid" src={logo}/>
             </a>
             <MDBListGroup className="list-group-flush">
-                <NavLink exact={true} to="/dashboard" activeClassName="activeClass">
+                <NavLink exact={true} to="/admin" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="user" className="mr-3"/>
                         Profile

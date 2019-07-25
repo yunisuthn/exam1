@@ -26,11 +26,12 @@ class TopNavigation extends Component {
     render() {
         return (
             <MDBNavbar className="flexible-navbar" light expand="md" scrolling>
+                <div className="flexible-navbar">
                 <MDBNavbarBrand href="/">
                     <strong>MDB</strong>
                 </MDBNavbarBrand>
-                <MDBNavbarToggler onClick = { this.onClick } />
-                <MDBCollapse isOpen = { this.state.collapse } navbar>
+                {/* <MDBNavbarToggler onClick = { this.onClick } /> */}
+                {/* <MDBCollapse isOpen = { this.state.collapse } navbar  onClick = { this.onClick }> */}
                     <MDBNavbarNav right>
                         <MDBNavItem>
                             <a className="border border-light rounded mr-1 nav-link Ripple-parent" rel="noopener noreferrer" href="https://github.com/yunisuthn/exam" target="_blank"><MDBIcon fab icon="github" className="mr-2"/>GitHub</a>
@@ -44,8 +45,9 @@ class TopNavigation extends Component {
                         </MDBNavItem>
 
                     </MDBNavbarNav>
-                </MDBCollapse>
-            </MDBNavbar>
+                {/* </MDBCollapse> */}
+            </div>
+            </MDBNavbar> 
         );
     }
 }

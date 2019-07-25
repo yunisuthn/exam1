@@ -9,7 +9,7 @@ import TopNavigation from './TopNavigation';
 import SideNavigation from './SlideNavigation';
 import API from '../../../utils/API';
 
-import Footer from './Footer';
+import Footer from '../../../tenaComponent/Footer';
 class PostFrontToBack extends React.Component {
 
   constructor(props) {
@@ -30,15 +30,6 @@ class PostFrontToBack extends React.Component {
     };
     this.onChange = this.onChange.bind(this)
     this.handleUploadImage = this.handleUploadImage.bind(this);
-    this.disconnect.bind(this);
-  }
-  disconnect = event => {
-    API.logout();
-    window.location = "/";
-  }
-
-  liste = event => {
-    window.location = "/userArticle";
   }
   onChange(event) {
     this.setState({
@@ -172,18 +163,6 @@ class PostFrontToBack extends React.Component {
                   type="submit">
                   Ajouter
                       </Button>
-                <Button className='couleur boutton'
-                  onClick={this.disconnect}
-                  type="submit"
-                >
-                  Deconnecter
-                        </Button>
-                <Button className='couleur boutton'
-                  onClick={this.liste}
-                  type="submit"
-                >
-                  Mes produits
-                        </Button>
               </FormGroup>
 
 

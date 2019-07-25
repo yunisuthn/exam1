@@ -6,7 +6,7 @@ import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, 
 // import Image2 from './cuisine2.jpeg';
 // import Image3 from './cuisine3.png';
 import Navbar from './Navbar';
-import Footer from './Footer';
+//import Footer from './Footer';
 import Home from './Home';
 import Visite from './Visitez';
 import Photo from './Photo';
@@ -18,7 +18,7 @@ class Accueil extends Component {
     render() {
         return (
             <div>
-                <div class=" container-fluid " id='div'>
+                <div class=" container-fluid " >
                     <div class=" row ">
                         <Navbar />
                         <div class="container">
@@ -33,8 +33,8 @@ class Accueil extends Component {
                             </div>
                         </div>
                     </div>
-
-                    < Footer />
+{/* 
+                    < Footer /> */}
                 </div>
             </div>
         );

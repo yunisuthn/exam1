@@ -259,7 +259,7 @@ exports.createArt = (req, res) => {
                 duree: req.body.duree,
                 placedispo: req.body.placedispo,
                 placeres: req.body.placeres,
-
+                affiche: true,
                 prix: req.body.prix,
                 photo_profil: '' + nomImage + '.jpg'
             });
@@ -284,7 +284,11 @@ exports.createArt = (req, res) => {
 exports.findArt = (req, res) => {
     Atelier.find()
         .then(notes => {
-            res.send(notes);
+            for (let i = 0; i < notes.length; i++) {
+                if(note[i].affiche == true){
+                    res.send(notes);
+                }
+            }
         }).catch(err => {
             res.status(500).send({
                 message: err.message || 'some error'

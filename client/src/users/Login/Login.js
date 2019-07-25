@@ -31,7 +31,7 @@ export default class Login extends React.Component {
 
             //localStorage.setItem('token', data.data.token, 'id', data.data.id);
             localStorage.setItem('id', data.data.id);
-            window.location = '/dashboard'
+            window.location = '/admin'
             /* this.props.history.push('/dashboard'); */
         }, function (error) {
             console.log(error);
