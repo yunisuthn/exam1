@@ -4,9 +4,7 @@ class Footer extends React.Component {
 
     render() {
         return (
-           <footer class="page-footer font-small  darken-3">
-            
-              <div class="container">
+           <footer class=" mx-auto mt-5 page-footer font-small  darken-3">
             
                 <div class="row">
             
@@ -36,7 +34,6 @@ class Footer extends React.Component {
             
                 </div>
             
-              </div>
             
               <div class="footer-copyright text-center py-3">© 2018 Copyright:
                 <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>

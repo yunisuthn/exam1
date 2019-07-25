@@ -11,6 +11,8 @@ import Image1 from './plat1.jpg';
 class Home extends Component {
     introduction= () =>{
         window.location = '/introduction'
+            /* this.props.history.push('/dashboard'); */
+        
     }
     
     Objectif= () =>{

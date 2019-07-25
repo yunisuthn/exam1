@@ -5,6 +5,8 @@ import axios from 'axios';
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import {MDBContainer, MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBRow, MDBCol } from 'mdbreact';
 
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 export default class Inscrire extends Component {
 
@@ -58,10 +60,6 @@ export default class Inscrire extends Component {
     };
     axios.post('http://localhost:8081/particulier', obj)
       .then(res => console.log(res.data));
-
-      // axios.post('http://localhost:8081/autoInc/'+localStorage.atel)
-      // .then(res => console.log(res.data))
-      // .catch(err => console.log('error === ',err))
 
     this.setState({
       nom: '',
@@ -126,30 +124,96 @@ export default class Inscrire extends Component {
 
     render() {
           return (
+            <div>
+                <div class=" container-fluid " id='div'>
+                    <div class=" row ">
+            <Navbar />
+            </div>
             <div className='container'>
               <div className='col'>
-                <div className='col-md-2 col1 robot'> 
-                <div className='titre'>
+                <div className='col-md-2 col1 robot titre'> 
                   {this.state.profil.titre}
-                </div>
                 
                 </div>
                 <div className='col-md-5 col2'> 
-                      <p>{this.state.profil.description}</p>
+                  <p>{this.state.profil.description}</p>
                   <img width="100%" height="100%" src={'http://localhost:8081/photos/'+this.state.profil.photo_profil} alt="pdp" />
                 </div>
                 <div className='col-md-3'> 
-                  <div className='col3'> 
-                soratako1
+                  <div className='col3 '> 
+                      <h3 className='debut'>{this.state.profil.titre}</h3>
+                      <ul  className='ul '>
+                      <li>date : {this.state.profil.date} </li>
+                      <li>début du cours : {this.state.profil.debut} </li>
+                      <li>durée : {this.state.profil.duree} heures</li>
+                      <li>place disponibles : {this.state.profil.placedispo}</li>
+                      <li>place réservée : {this.state.profil.placeres}</li>
+                      <li>frais du cours : {this.state.profil.prix}</li>
+                      </ul>
                   </div>
-                  <div className='col4'> 
-                soratako1
+                  <div className='col-md-12 inscrit'> 
+                  <h3>Inscrivez-vous ici </h3>
+                 <MDBContainer>
+                     <MDBRow>
+                         <MDBCol>
+
+                             <FormGroup className='row' controlId="nom" bsSize="large">
+                                 <FormLabel  className='couleur col-md-6' >nom</FormLabel>
+                                <FormControl className=' col-md-6'  autoFocus type="text" 
+                                value={this.state.nom}
+                                onChange={this.onChangeNom}/>
+                            </FormGroup>
+                            <FormGroup className='row' controlId="prenom" bsSize="large">
+                                <FormLabel className='couleur col-md-6'>Prénom</FormLabel>
+                                <FormControl autoFocus type="text"
+                                className=' col-md-6' 
+                                value={this.state.prenom}
+                                 onChange={this.onChangePrenom} />
+                            </FormGroup>
+                            <FormGroup className='row' controlId="email" bsSize="large">
+                                <FormLabel  className='couleur col-md-6'>email</FormLabel>
+                                <FormControl autoFocus type="email" 
+                                className=' col-md-6' 
+                                value={this.state.email} 
+                                onChange={this.onChangeEmail} />
+                            </FormGroup>
+                            <FormGroup className='row' controlId="tel" bsSize="large">
+                                <FormLabel  className='couleur col-md-6'>Numéro de téléphone</FormLabel>
+                                <FormControl value={this.state.tel} 
+                                className=' col-md-6' 
+                                onChange={this.onChangeTel} 
+                                type="text" 
+                                />
+                            </FormGroup>
+
+                            <Button
+                                type="submit"
+                                onClick={()=>{
+
+                                  axios.post('http://localhost:8081/autoInc/'+this.state.profil._id)
+                                  .then(res => console.log(res.data))
+                                  .catch(err => console.log('error === ',err))
+
+                                }
+                                }
+                            >
+                                Envoyer
+                            </Button>
+
+                        </MDBCol>
+                    </MDBRow>
+                </MDBContainer>
+            </div>
                   </div>
                 </div>
               </div>
-              </div>
   
   
+              <div class=" container-fluid  "  id='div'>
+                    <Footer />
+                </div>
+            </div>
+            </div>
           );
       }
     // render() {

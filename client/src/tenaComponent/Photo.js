@@ -13,7 +13,7 @@ class Photo extends Component {
 
     render() {
         return (
-            <div >
+            <div className=' mx-auto mt-5'>
                 <img className='img imgT' src={Image1} alt="Logo" />
                 {/* <img className = 'img imgT' src={Image2} alt="Logo" />
 <img className = 'img imgT' src={Image3} alt="Logo" /> */}

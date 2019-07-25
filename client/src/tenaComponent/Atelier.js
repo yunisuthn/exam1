@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBRow, MDBCol } from 'mdbreact';
 
+import Navbar from './Navbar';
+import Footer from './Footer';
 import axios from 'axios';
 class Accueil extends Component {
 
@@ -62,6 +64,11 @@ class Accueil extends Component {
     }
     render() {
         return (
+            <div>
+                <div class=" container-fluid " id='div'>
+                    <div class=" row ">
+            <Navbar />
+            </div>
                 <div  class="container">
                     <div className='row margin' >
         {
@@ -91,6 +98,11 @@ class Accueil extends Component {
         }
                         {/* {this.carte()} */}
                     </div>
+                    </div>
+                    </div>
+                <div class=" container-fluid  "  id='div'>
+                    <Footer />
+                </div>
             </div>
         );
     }
